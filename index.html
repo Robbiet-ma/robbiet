@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎光临</title>
+    <style>
+        .body { background: linear-gradient(90deg, #fa709a, #fee140);}
+        .wrap { display: flex;justify-self: center;}
+        .login {
+            width: 460px;
+            padding: 50px;
+            height: 460px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            color: #fff;
+            float: right;
+        }
+        .login h2{font-size: 30px;text-align: center;margin-bottom: 30px;}
+        .login .inputBox{position: relative; margin-bottom: 50px;}
+        .login .inputBox input{width: 100%; padding: 10px 0; border-bottom: 2px; border-style: double;}
+        .login .submit{position: absolute;}
+        .login button{width: 120px;height: 50px;border-radius: 10px;font-weight: bold;font-size: 20px;}
+        .welcome h1{font-style: italic; font-family: 黑体;text-align: center;line-height: 15cm;}
+        .flower{position: absolute;width: 100%;height: 100vh;overflow: hidden;z-index: 1;pointer-events: none;}
+        .flower img{position: absolute;}
+        /*花瓣动画*/
+        @keyframes animate{
+            0%{
+            opacity: 0;top: -10px;transform: translateX(20px) rotate(0deg);
+        }
+        10%{opacity: 1;}
+        20%{transform: translateX(-20px) rotate(45deg);}
+        40%{transform: translateX(-20px) rotate(90deg);}
+        60%{transform: translateX(20px) rotate(180deg);}
+        80%{transform: translateX(-20px) rotate(45deg);}
+        100%{top: 110%; transform: translateX(-20px) rotate(225deg);}
+    }
+    /*添加动画*/
+    .flower img:nth-child(1){left: 20%;animation: animate 20s linear infinite;}
+    .flower img:nth-child(2){left: 50%;animation: animate 14s -2s linear infinite;}
+    .flower img:nth-child(3){left: 70%;animation: animate 12s -3s linear infinite;}
+    .flower img:nth-child(4){left: 5%;animation: animate 15s -2s linear infinite;}
+    .flower img:nth-child(5){left: 85%;animation: animate 18s -1s linear infinite;}      
+    .flower img:nth-child(6){left: 90%;animation: animate 12s -1s linear infinite;}
+    .flower img:nth-child(7){left: 15%;animation: animate 14s -2s linear infinite;}
+    .flower img:nth-child(8){left: 60%;animation: animate 15s -1s linear infinite;}
+    </style>
+  <script type="text/javascript">
+    </script>
+</head>
+
+<body class="body">
+    <div id="wrap">
+        <div class="flower">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="50px" height="30px" alt="">
+        </div>
+        <div class="login">
+            
+            <h2>登录</h2>
+            <from action="sucess.html" method="post" onsubmit="return valForm()">
+                <div class="inputBox">
+                    <input type="text" id="username" placeholder="请输入用户名">
+                    <label for="">用户名</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="password" placeholder="请输入密码">
+                    <label for="">密码</label>
+                </div>
+                <div class="submit">
+                    <button>
+                        <span>提交</span>
+                    </button>
+                </div>
+                
+            </from>
+        </div>
+        <div class="welcome">
+            <h1>Welcom to Home</h1>
+        </div>
+        
+    </div>
+   
+    <script type="text/javascript">
+        //校验用户名密码是否合法
+            var username=document.getElementById('username').nodeValue;
+            var password=document.getElementById('password').nodeValue;
+            //对用户名和密码进行校验
+		function valForm(){
+            
+			return valUserName()&&valPwd();
+		}
+        //校验用户名
+		function valUserName() {
+            if(username=='admin'){
+                return true
+            }else{
+                tipName.style.display='inline-block';//显示
+				iptName.focus();
+                alert('用户名错误');
+                return false;
+            }
+
+        }
+        //校验密码
+		function valPwd(){
+            if(password=='123456'){
+                return true
+            }else{
+                tipPwd.style.display='inline-block';
+				iptPwd.focus();//获取焦点
+                alert('密码错误');
+                return false;
+            }
+  
+            
+        }
+    </script>
+</body>
+
+</html>
