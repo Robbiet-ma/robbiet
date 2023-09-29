@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎光临</title>
+    <title>欢迎回家</title>
     <style>
         .body { background: linear-gradient(90deg, #fa709a, #fee140);}
-        .wrap { display: flex;justify-self: center;}
+        .wrap { display: flex;justify-self: center;background-attachment: fixed;}
         .login {
-            width: 460px;
+            width: 450px;
             padding: 50px;
-            height: 460px;
+            height: 480px;
             box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-            color: #fff;
+            /* color: #fff; */
+            font-weight: bold;
             float: right;
         }
+        .welcome{height: 440px;}
         .login h2{font-size: 30px;text-align: center;margin-bottom: 30px;}
         .login .inputBox{position: relative; margin-bottom: 50px;}
-        .login .inputBox input{width: 100%; padding: 10px 0; border-bottom: 2px; border-style: double;}
+        .login .inputBox div input{width: 120px; padding: 10px 0; border-bottom: 2px; border-style: double;}
+        span{display: none;}
         .login .submit{position: absolute;}
-        .login button{width: 120px;height: 50px;border-radius: 10px;font-weight: bold;font-size: 20px;}
+        .login input{width: 120px;height: 50px;border-radius: 10px;font-weight: bold;font-size: 20px;}
         .welcome h1{font-style: italic; font-family: 黑体;text-align: center;line-height: 15cm;}
-        .flower{position: absolute;width: 100%;height: 100vh;overflow: hidden;z-index: 1;pointer-events: none;}
+        .flower{position: absolute;width: 96%;height: 440px;overflow: hidden;z-index: 1;pointer-events: none;}
         .flower img{position: absolute;}
         /*花瓣动画*/
         @keyframes animate{
@@ -46,6 +49,29 @@
     .flower img:nth-child(6){left: 90%;animation: animate 12s -1s linear infinite;}
     .flower img:nth-child(7){left: 15%;animation: animate 14s -2s linear infinite;}
     .flower img:nth-child(8){left: 60%;animation: animate 15s -1s linear infinite;}
+    .inner {
+				background: blue;
+				padding: 1em;
+				width: 250px;
+				border-radius: 10px;
+				float: right;
+				clip-path: circle(10% at 90% 20%);
+                
+			}
+			
+			.inner span {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 12px;
+				margin-right: 163.37px;
+                
+			}
+			
+			.inner p {
+				font-size: 0.8em;
+			}
+			.inner:hover{clip-path: circle(75%);background: #00b6ff;}
+			.inner:hover span{color: rgba(255,255,255,0);}
     </style>
   <script type="text/javascript">
     </script>
@@ -54,34 +80,51 @@
 <body class="body">
     <div id="wrap">
         <div class="flower">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
-            <img src="image/花瓣.png" width="50px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
+            <img src="image/花瓣_pixian_ai.png" width="30px" height="30px" alt="">
         </div>
         <div class="login">
-            
+            <div class="inner">
+                <span>帮助</span>
+                <h1>Hey</h1>
+                <p>如果你是从事软件行业的，用户名密码你一般都是可以猜到的，你懂得&#128514&#128514&#128514</p>
+            </div>
             <h2>登录</h2>
-            <from action="sucess.html" method="post" onsubmit="return valForm()">
+            <!-- <from action="resume-template.html" method="post" onsubmit="return valForm()">
                 <div class="inputBox">
-                    <input type="text" id="username" placeholder="请输入用户名">
-                    <label for="">用户名</label>
+                    <input type="text" id="txt-name" placeholder="请输入用户名">
+                    <span id="tip-name">用户名错误</span>
+                    <label for="">用户名</label> 
                 </div>
                 <div class="inputBox">
-                    <input type="password" id="password" placeholder="请输入密码">
-                    <label for="">密码</label>
+                    <input type="password" id="pwd" placeholder="请输入密码">
+                    <span id="tip-pwd">密码错误</span>
+                     <label for="">密码</label>
                 </div>
                 <div class="submit">
-                    <button>
-                        <span>提交</span>
-                    </button>
+                    <input type="submit" value="提交">
                 </div>
-                
-            </from>
+               
+            </from> -->
+            <form action="resume-simple-template-master/resume-template.html" method="post" onsubmit="return valForm()">
+                <div>
+                    <input type="text" id="txt-name" class="inputBox"placeholder="请输入用户名">
+                    <span id="tip-name" onclick="no">用户名错误</span> 
+                </div>
+                <div>
+                    <input type="password" id="pwd" class="inputBox" placeholder="请输入密码">
+                    <span id="tip-pwd">密码错误</span>
+                </div>
+                <div>
+                    <input type="submit" value="登录">
+                </div>
+            </form>
         </div>
         <div class="welcome">
             <h1>Welcom to Home</h1>
@@ -90,40 +133,41 @@
     </div>
    
     <script type="text/javascript">
-        //校验用户名密码是否合法
-            var username=document.getElementById('username').nodeValue;
-            var password=document.getElementById('password').nodeValue;
-            //对用户名和密码进行校验
+		//校验用户名密码是否合法
+		var iptName=document.getElementById('txt-name');
+		var iptPwd=document.getElementById('pwd');
+		var tipName=document.getElementById('tip-name');
+		var tipPwd=document.getElementById('tip-pwd');
+ 
+		//对用户名和密码进行校验
 		function valForm(){
-            
+
 			return valUserName()&&valPwd();
 		}
-        //校验用户名
+ 
+		//校验用户名
 		function valUserName() {
-            if(username=='admin'){
-                return true
-            }else{
-                tipName.style.display='inline-block';//显示
+                newname=iptName.value
+                if(newname!='admin'){
+				//校验不通过
+				tipName.style.display='inline-block';//显示
 				iptName.focus();
-                alert('用户名错误');
-                return false;
-            }
-
-        }
-        //校验密码
+				return false;
+			}
+			return true;
+		}
+ 
+		//校验密码
 		function valPwd(){
-            if(password=='123456'){
-                return true
-            }else{
-                tipPwd.style.display='inline-block';
+                newword=iptPwd.value
+                if(newword!='123456'){
+				tipPwd.style.display='inline-block';
 				iptPwd.focus();//获取焦点
-                alert('密码错误');
-                return false;
-            }
-  
-            
-        }
-    </script>
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 
 </html>
